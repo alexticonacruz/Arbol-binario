@@ -1,8 +1,9 @@
 from nodo import nodo
-global a1
 class arbol:
     def __init__(self):
         self.raiz = None
+        self.bInorden = ""
+        self.bOrden = ""
         
     
     def __añadirRecursivo(self,nodo1,n):
@@ -26,20 +27,25 @@ class arbol:
             print("else")
             self.__añadirRecursivo(self.raiz,dato)
     def mostrar(self):
-        print(self.raiz)
+        print(self.bInorden)
     
     
-    def __inorden(self,nodo1,cadena):
+    def __inorden(self,nodo1):
         if nodo1 is not None:
             self.__inorden(nodo1.izq)
             print(nodo1.dato)
-            cadena = cadena + nodo1.dato
+            
+            if self.bInorden is "":
+                self.bInorden = f"{nodo1.dato}"
+            else:
+                self.bInorden = f"{self.bInorden}  {nodo1.dato}"
+                
             self.__inorden(nodo1.der)
-            return a1
+            
     
     
-    def buscarInorden(self,cadena):
-        self.__inorden(self.raiz,cadena)
+    def buscarInorden(self):
+        self.__inorden(self.raiz)
     
             
 arbol1 = arbol()
@@ -47,8 +53,8 @@ arbol1.añadir(5)
 arbol1.añadir(2)
 arbol1.añadir(34)
 arbol1.añadir(70)
-arbol1.mostrar("")
-print(arbol1.buscarInorden())
+arbol1.buscarInorden()
+arbol1.mostrar()
                 
         
 
