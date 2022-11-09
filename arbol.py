@@ -22,9 +22,7 @@ class arbol:
     def añadir(self,dato):
         if self.raiz is None:
             self.raiz = nodo(dato)
-            print("if")
         else:
-            print("else")
             self.__añadirRecursivo(self.raiz,dato)
     def mostrar(self):
         print(self.bInorden)
@@ -34,7 +32,6 @@ class arbol:
         if nodo1 is not None:
             self.__inorden(nodo1.izq)
             print(nodo1.dato)
-            
             if self.bInorden is "":
                 self.bInorden = f"{nodo1.dato}"
             else:
