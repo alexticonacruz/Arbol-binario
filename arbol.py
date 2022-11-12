@@ -27,22 +27,13 @@ class arbol:
             
         else:
             self.__añadirRecursivo(self.raiz,dato)
-        #return self.raiz    #   --Cambio 11/11/2022
     def mostrar(self):
-        # print(self.bInorden)
-        # print(self.nivel)
         return self.bInorden1
     
     def __inorden(self,nodo1):
         if nodo1 is not None: 
             self.__inorden(nodo1.izq)
-            # print(nodo1.dato)
-            # if self.bInorden is "":
-            #     self.bInorden = f"{nodo1.dato}"
-            # else:
-            #     self.bInorden = f"{self.bInorden}  {nodo1.dato}"
-            if nodo1.dato != None:
-                self.bInorden1.append(nodo1.dato)  
+            self.bInorden1.append(nodo1.dato)
             self.__inorden(nodo1.der)
             
             
@@ -60,12 +51,18 @@ class arbol:
             nodo1.izq = None
             nodo1.der = None
             self.bInorden1 = []
-            self.__inorden(self.raiz)
+            return True
+        #else: False
+        
         else:
             if nodo1.dato > dato:
-                self.__borraNodo(nodo1.izq,dato)
+                if self.__borraNodo(nodo1.izq,dato): 
+                    nodo1.izq = None
+                    self.__inorden(self.raiz)
             else:
-                self.__borraNodo(nodo1.der,dato)
+                if self.__borraNodo(nodo1.der,dato):
+                    nodo1.der = None
+                    self.__inorden(self.raiz)
 
     def borrarNodo (self,dato):
         self.__borraNodo(self.raiz,dato)
@@ -87,7 +84,7 @@ arbol1.buscarInorden()
 print(arbol1.mostrar())
 print(arbol1.raiz)
 
-arbol1.borrarNodo(2)
+arbol1.borrarNodo(70)
 print(arbol1.mostrar())             
         
 
