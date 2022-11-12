@@ -47,6 +47,9 @@ class arbol:
     
     def __borraNodo (self,nodo1,dato):
         if nodo1.dato == dato:
+            nodo1.dato = None
+            nodo1.izq = None
+            nodo1.der = None
             self.bInorden1 = []
             return True
         
@@ -61,28 +64,39 @@ class arbol:
                     self.__inorden(self.raiz)
 
     def borrarNodo (self,dato):
-        self.__borraNodo(self.raiz,dato)
+        # implementacion nueva 12/11/22
+        if self.raiz.dato == dato:
+            self.raiz = None
+            
+        else:
+            #----------------
+            self.__borraNodo(self.raiz,dato)
+        
         
         
     
             
-# arbol1 = arbol()
-# arbol1.añadir(5)
-# arbol1.añadir(2)
-# arbol1.añadir(34)
-# arbol1.añadir(70)
-# arbol1.añadir(70)
-# arbol1.añadir(80)
-# arbol1.añadir(80)
-# arbol1.añadir(80)
-# arbol1.añadir(7)
-# arbol1.buscarInorden()
-# print(arbol1.mostrar())
-# print(arbol1.raiz)
+arbol1 = arbol()
+arbol1.añadir(5)
+arbol1.añadir(2)
+arbol1.añadir(34)
+arbol1.añadir(70)
+arbol1.añadir(70)
+arbol1.añadir(80)
+arbol1.añadir(80)
+arbol1.añadir(80)
+arbol1.añadir(7)
+arbol1.buscarInorden()
+print(arbol1.mostrar())
+print(arbol1.raiz)
 
-# arbol1.borrarNodo(34)
-# print(arbol1.mostrar())             
+arbol1.borrarNodo(5)
+print(arbol1.mostrar())             
         
-
+# a = arbol1
+# print("dañino")
+# print(a)
+# a = None
+# print(a)
     
         
