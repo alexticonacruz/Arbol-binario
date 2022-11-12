@@ -42,6 +42,7 @@ class arbol:
     
     
     def buscarInorden(self):
+        self.bInorden1 = []
         self.__inorden(self.raiz)
     
     
@@ -67,6 +68,7 @@ class arbol:
         # implementacion nueva 12/11/22
         if self.raiz.dato == dato:
             self.raiz = None
+            self.bInorden1 = []
             
         else:
             #----------------

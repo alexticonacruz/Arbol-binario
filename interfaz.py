@@ -40,6 +40,7 @@ class forma(Tk):
         self.lb4.place(x=600,y=120)
         self.canvas=Canvas(width=800,height=500,background="white")
         self.canvas.place(x=10,y=170)
+        self.cadena = ""
     #Borrar Datos
     def borrar_datos(self):
         e=int(self.c1.get())
@@ -67,10 +68,10 @@ class forma(Tk):
         #self.lb1.configure(text="In-order: "+self.inorder(self.raiz))
         self.arbol1.buscarInorden()
         a = self.arbol1.mostrar()
-        cadena = ""
+        self.cadena = ""
         for i1 in a:
-            cadena = cadena +","+ str(i1)
-        self.lb1.configure(text=f"In- Orden {cadena}")
+            self.cadena = self.cadena +","+ str(i1)
+        self.lb1.configure(text=f"In- Orden {self.cadena}")
     # def inorder(self,p):
     #     if p==None:
     #         return "" 
