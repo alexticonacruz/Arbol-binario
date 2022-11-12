@@ -66,22 +66,22 @@ class arbol:
         
     
             
-arbol1 = arbol()
-arbol1.añadir(5)
-arbol1.añadir(2)
-arbol1.añadir(34)
-arbol1.añadir(70)
-arbol1.añadir(70)
-arbol1.añadir(80)
-arbol1.añadir(80)
-arbol1.añadir(80)
-arbol1.añadir(7)
-arbol1.buscarInorden()
-print(arbol1.mostrar())
-print(arbol1.raiz)
+# arbol1 = arbol()
+# arbol1.añadir(5)
+# arbol1.añadir(2)
+# arbol1.añadir(34)
+# arbol1.añadir(70)
+# arbol1.añadir(70)
+# arbol1.añadir(80)
+# arbol1.añadir(80)
+# arbol1.añadir(80)
+# arbol1.añadir(7)
+# arbol1.buscarInorden()
+# print(arbol1.mostrar())
+# print(arbol1.raiz)
 
-arbol1.borrarNodo(34)
-print(arbol1.mostrar())             
+# arbol1.borrarNodo(34)
+# print(arbol1.mostrar())             
         
 
     

@@ -63,7 +63,14 @@ class forma(Tk):
     #     else:
     #         return str(p.ele)+", "+self.preorder(p.iz)+self.preorder(p.der)
     def mostrar_2(self):
-        self.lb1.configure(text="In-order: "+self.inorder(self.raiz))
+        print("---- Ingreso a tico  ---------")
+        #self.lb1.configure(text="In-order: "+self.inorder(self.raiz))
+        self.arbol1.buscarInorden()
+        a = self.arbol1.mostrar()
+        cadena = ""
+        for i1 in a:
+            cadena = cadena +","+ str(i1)
+        self.lb1.configure(text=f"In- Orden {cadena}")
     # def inorder(self,p):
     #     if p==None:
     #         return "" 
