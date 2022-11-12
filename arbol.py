@@ -41,7 +41,8 @@ class arbol:
             #     self.bInorden = f"{nodo1.dato}"
             # else:
             #     self.bInorden = f"{self.bInorden}  {nodo1.dato}"
-            self.bInorden1.append(nodo1.dato)  
+            if nodo1.dato != None:
+                self.bInorden1.append(nodo1.dato)  
             self.__inorden(nodo1.der)
             
             
@@ -55,6 +56,7 @@ class arbol:
     
     def __borraNodo (self,nodo1,dato):
         if nodo1.dato == dato:
+            nodo1.dato = None
             nodo1.izq = None
             nodo1.der = None
             self.bInorden1 = []
@@ -85,7 +87,7 @@ arbol1.buscarInorden()
 print(arbol1.mostrar())
 print(arbol1.raiz)
 
-arbol1.borrarNodo(34)
+arbol1.borrarNodo(2)
 print(arbol1.mostrar())             
         
 
