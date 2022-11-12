@@ -47,12 +47,8 @@ class arbol:
     
     def __borraNodo (self,nodo1,dato):
         if nodo1.dato == dato:
-            nodo1.dato = None
-            nodo1.izq = None
-            nodo1.der = None
             self.bInorden1 = []
             return True
-        #else: False
         
         else:
             if nodo1.dato > dato:
@@ -84,7 +80,7 @@ arbol1.buscarInorden()
 print(arbol1.mostrar())
 print(arbol1.raiz)
 
-arbol1.borrarNodo(70)
+arbol1.borrarNodo(34)
 print(arbol1.mostrar())             
         
 

@@ -6,7 +6,7 @@ class forma(Tk):
     def __init__(self):
         self.arbol1 = arbol()
         Tk.__init__(self)
-        self.geometry("805x700")
+        self.geometry("855x750")
         self.title("Nodos")
         self.config(bg="thistle")
         self.lb1=Label(self,text="Arboles Binarios", font="Times 17  underline",bg="thistle")
@@ -25,6 +25,10 @@ class forma(Tk):
         self.b4.place(x=450,y=120)
         self.b5=Button(self,text="Mostrar datos", command=self.mostrar_datos, width=14)
         self.b5.place(x=600,y=30)
+        # Implementacion boton eliminar
+        self.btnEliminar=Button(self,text="Borrar", command=self.borrar_datos, width=14)
+        self.btnEliminar.place(x=730,y=30)
+        
         self.raiz=None
         self.lb1=Label(self,bg="thistle")
         self.lb1.place(x=10,y=130)
@@ -34,11 +38,21 @@ class forma(Tk):
         self.lb3.place(x=600,y=90)
         self.lb4=Label(self,bg="thistle")
         self.lb4.place(x=600,y=120)
-        self.canvas=Canvas(width=780,height=500,background="white")
+        self.canvas=Canvas(width=800,height=500,background="white")
         self.canvas.place(x=10,y=170)
+    #Borrar Datos
+    def borrar_datos(self):
+        e=int(self.c1.get())
+        self.arbol1.borrarNodo(e)
+        self.canvas = None
+        self.canvas=Canvas(width=800,height=500,background="white")
+        self.canvas.place(x=10,y=170)
+        self.c1.delete(0,END)
+        self.dibujar(self.arbol1.raiz,345,10,200,360,5)
+    
     def insertar(self):
         e=int(self.c1.get())
-        self.arbol1.añadir(e)        # Instancia a la clase 
+        self.arbol1.añadir(e)        # Instancia de la clase 
         self.c1.delete(0,END)        # para borrar el txt
         self.dibujar(self.arbol1.raiz,345,10,200,360,5) #Ver 
     def mostrar_1(self):
