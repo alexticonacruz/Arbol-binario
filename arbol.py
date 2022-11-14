@@ -92,7 +92,9 @@ class arbol:
             
     
     def preorden(self):
+        self.bPreOrden1 = []
         self.__preOrden(self.raiz)
+        return self.bPreOrden1
         
     #   ------- Ordenado PosOrden  imprime => izq , der, Raiz  --->   izq = 5, der = 15,  raiz = 10,      ---
     def __posOrden(self,nodo1):
@@ -105,7 +107,11 @@ class arbol:
         
     
     def posorden(self):
+        self.bPosOrden1 = []
         self.__posOrden(self.raiz)
+        return self.bPosOrden1
+        
+        
 arbol1 = arbol()
 arbol1.añadir(45)
 arbol1.añadir(23)

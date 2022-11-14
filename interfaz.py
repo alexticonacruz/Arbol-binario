@@ -57,7 +57,12 @@ class forma(Tk):
         self.c1.delete(0,END)        # para borrar el txt
         self.dibujar(self.arbol1.raiz,345,10,200,360,5) #Ver 
     def mostrar_1(self):
-        self.lb1.configure(text="Pre-order: "+self.preorder(self.raiz))
+        cadena = ""
+        for i1 in self.arbol1.preorden():
+            cadena = f"{cadena} {i1}"
+        
+        self.lb1.configure(text=f"Pre-order : {cadena}")
+        #self.lb1.configure(text="Pre-order: "+self.preorder(self.raiz))
     # def preorder(self,p):
     #     if p==None:
     #         return ""
@@ -78,7 +83,11 @@ class forma(Tk):
     #     else:
     #         return  self.inorder(p.iz) + str(p.ele) + ", " + self.inorder(p.der) 
     def mostrar_3(self):
-        self.lb1.configure(text="Post-order: "+self.postorder(self.raiz))
+        cadena = ""
+        for i1 in self.arbol1.posorden():
+            cadena = f"{cadena} {i1}"
+        self.lb1.configure(text=f"Post-order: {cadena}")
+        #self.lb1.configure(text="Post-order: "+self.postorder(self.raiz))
     # def postorder(self,p):
     #     if p==None:
     #         return ""
